@@ -17,11 +17,13 @@ func ParseCityList(contents []byte) engine.ParseResult {
 	result := engine.ParseResult{}
 
 	for _, s := range submatch {
-		result.Items = append(result.Items, "City: "+string(s[2]))
+		//result.Items = append(result.Items, "City: "+string(s[2]))
+
 		result.Requests = append(result.Requests, engine.Request{
 			URL:        string(s[1]),
 			ParserFunc: ParseCity,
 		})
+
 	}
 	return result
 }
